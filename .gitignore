@@ -1,0 +1,34 @@
+# Build
+build/
+cmake-build-*/
+out/
+
+# IDE
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+
+# OS
+.DS_Store
+Thumbs.db
+
+# CMake generated
+CMakeCache.txt
+CMakeFiles/
+cmake_install.cmake
+Makefile
+*.cmake
+!CMakeLists.txt
+
+# Compiled
+*.o
+*.obj
+*.exe
+*.out
+*.app
+
+# Resources (optional icons — not tracked)
+app.ico
+app.icns
