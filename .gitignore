@@ -32,3 +32,6 @@ Makefile
 # Resources (optional icons — not tracked)
 app.ico
 app.icns
+
+# Engram local data
+sqlite.log
