@@ -1,0 +1,58 @@
+name: Compilación Multiplataforma
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+jobs:
+  build:
+    name: Compilar en ${{ matrix.os }}
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [ubuntu-latest, windows-latest, macos-latest]
+
+    steps:
+    - uses: actions/checkout@v4
+
+    # 1. Instalar dependencias según el sistema operativo
+    - name: Instalar WebP en Linux
+      if: matrix.os == 'ubuntu-latest'
+      run: |
+        sudo apt-get update
+        sudo apt-get install -y libwebp-dev pkg-config
+
+    - name: Instalar WebP en macOS
+      if: matrix.os == 'macos-latest'
+      run: |
+        brew install webp pkg-config
+
+    - name: Instalar WebP en Windows (vcpkg)
+      if: matrix.os == 'windows-latest'
+      run: |
+        vcpkg install libwebp:x64-windows
+
+    # 2. Configurar CMake
+    - name: Configurar CMake (Windows)
+      if: matrix.os == 'windows-latest'
+      run: cmake -B build -DCMAKE_TOOLCHAIN_FILE=C:/vcpkg/scripts/buildsystems/vcpkg.cmake
+
+    - name: Configurar CMake (Unix)
+      if: matrix.os != 'windows-latest'
+      run: cmake -B build
+
+    # 3. Compilar el proyecto
+    - name: Compilar
+      run: cmake --build build --config Release
+
+    # 4. Guardar los ejecutables como artefactos descargables
+    - name: Subir ejecutable compilado
+      uses: actions/upload-artifact@v4
+      with:
+        name: AssetShrink-${{ matrix.os }}
+        path: |
+          build/AssetShrink
+          build/Release/AssetShrink.exe
+        if-no-files-found: ignore
