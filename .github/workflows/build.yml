@@ -48,12 +48,13 @@ jobs:
     - name: Compilar
       run: cmake --build build --config Release
 
-    # 4. Guardar los ejecutables como artefactos descargables
+    # 4. Guardar los ejecutables como artefactos descargables (Corregido para macOS .app)
     - name: Subir ejecutable compilado
       uses: actions/upload-artifact@v4
       with:
         name: AssetShrink-${{ matrix.os }}
         path: |
           build/AssetShrink
+          build/AssetShrink.app
           build/Release/AssetShrink.exe
         if-no-files-found: ignore
