@@ -1,10 +1,13 @@
 cmake_minimum_required(VERSION 3.15)
-project(AssetShrink VERSION 1.0.0 LANGUAGES CXX)
+project(AssetShrink VERSION 2.1.0 LANGUAGES CXX)
 
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
 # Descargar la librería stb y cpp-httplib automáticamente
+# Generar config.h con la versión desde CMake (single source of truth)
+configure_file(config.h.in ${CMAKE_CURRENT_BINARY_DIR}/config.h)
+
 include(FetchContent)
 FetchContent_Declare(
     stb
@@ -70,5 +73,5 @@ else()
 endif()
 
 # Enlazar las librerías
-target_include_directories(AssetShrink PRIVATE ${stb_SOURCE_DIR} ${WEBP_INCLUDE_DIRS})
+target_include_directories(AssetShrink PRIVATE ${stb_SOURCE_DIR} ${WEBP_INCLUDE_DIRS} ${CMAKE_CURRENT_BINARY_DIR})
 target_link_libraries(AssetShrink PRIVATE httplib Threads::Threads ${WEBP_LIBRARIES})

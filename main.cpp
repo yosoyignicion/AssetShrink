@@ -8,6 +8,8 @@
 #include <map>
 #include <filesystem>
 
+#include "config.h"
+
 // Librerías de terceros (STB y WebP)
 #define STB_IMAGE_IMPLEMENTATION
 #include "stb_image.h"
@@ -55,7 +57,11 @@ const char* INDEX_HTML = R"raw(
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AssetShrink PRO v2.1.1</title>
+    <title>AssetShrink PRO v2.1</title>
+    <meta property="og:title" content="AssetShrink PRO v2.1">
+    <meta property="og:description" content="Compresor y conversor de imágenes local, ultra-rápido y privado mediante C++17 & WebP.">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://ignaciodev.gumroad.com/l/assetshrink-pro">
     <!-- Estilos CSS Premium embebidos (100% Offline, no requiere internet) -->
     <style>
         :root { --indigo: #6366f1; --indigo-hover: #4f46e5; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-500: #64748b; --slate-300: #cbd5e1; --slate-100: #f1f5f9; }
@@ -95,7 +101,7 @@ const char* INDEX_HTML = R"raw(
         <div style="display:flex; justify-content:space-between; width:100%; max-width:850px; margin:0 auto; align-items:center;">
             <div style="display:flex; align-items:center; gap:0.75rem;">
                 <span style="font-size:1.5rem; font-weight:900; background: linear-gradient(to right, #a78bfa, var(--indigo)); -webkit-background-clip: text; -webkit-text-fill-color: transparent;">AssetShrink</span>
-                <span style="font-size:0.75rem; font-weight:600; padding:0.25rem 0.5rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.2); color:#818cf8; border-radius:999px;">PRO v2.1.1</span>
+                <span style="font-size:0.75rem; font-weight:600; padding:0.25rem 0.5rem; background:rgba(99,102,241,0.1); border:1px solid rgba(99,102,241,0.2); color:#818cf8; border-radius:999px;">PRO v2.1</span>
             </div>
             <div>
                 <select id="langSelect">
@@ -476,7 +482,27 @@ const char* INDEX_HTML = R"raw(
 )raw";
 
 int main(int argc, char* argv[]) {
+    if (argc == 2 && (std::string(argv[1]) == "--version" || std::string(argv[1]) == "-v")) {
+        std::cout << PROJECT_NAME << " " << PROJECT_VERSION << std::endl;
+        std::cout << "Copyright (c) 2025 ignaciodev.gumroad.com" << std::endl;
+        return 0;
+    }
+
     httplib::Server svr;
+
+    // Página 404 personalizada
+    svr.set_error_handler([](const httplib::Request&, httplib::Response& res) {
+        if (res.status == 404) {
+            res.set_content("<html><head><meta charset=\"UTF-8\"><title>AssetShrink PRO</title>"
+                            "<style>body{background:#020617;color:#f1f5f9;font-family:system-ui;display:flex;"
+                            "flex-direction:column;align-items:center;justify-content:center;min-height:100vh;margin:0;}"
+                            "h1{font-size:5rem;margin:0;background:linear-gradient(to right,#a78bfa,#6366f1);"
+                            "-webkit-background-clip:text;-webkit-text-fill-color:transparent;}"
+                            "p{color:#64748b;}a{color:#818cf8;}</style>"
+                            "<h1>404</h1><p>Esta p\u00e1gina no existe en el servidor local.</p>"
+                            "<a href=\"/\">Volver al inicio</a></html>", "text/html");
+        }
+    });
 
     // Servir la página web principal
     svr.Get("/", [](const httplib::Request&, httplib::Response& res) {

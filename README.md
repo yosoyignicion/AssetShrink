@@ -8,22 +8,58 @@
   <img src="src/versus.png" alt="AssetShrink Versus Banner" width="800">
 </picture>
 
-# AssetShrink v2.1
+<div align="center">
+  <a href="https://ignaciodev.gumroad.com/l/assetshrink-pro">
+    <img src="https://img.shields.io/badge/Comprar_AssetShrink_PRO-Gumroad-800080?style=for-the-badge&logo=gumroad" alt="Comprar en Gumroad">
+  </a>
+</div>
+
+# AssetShrink PRO v2.1
 
 > **Compresor y conversor de imágenes local, ultra-rápido y privado mediante C++17 & WebP.**
 
 AssetShrink es una herramienta de escritorio ligera que se ejecuta al 100% en tu máquina local. Permite optimizar y convertir múltiples imágenes simultáneamente a formatos WebP, PNG o JPEG de manera segura y sin enviar tus archivos a servidores externos.
 
-![Badge](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus)
-![Badge](https://img.shields.io/badge/WebP-Optimizado-8A2BE2)
-![Badge](https://img.shields.io/badge/Licencia-MIT-green)
-![Badge](https://img.shields.io/badge/CI_Passing-ubuntu_|_macOS_|_windows-4CAF50)
+<p align="center">
+  <img src="https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus" alt="C++17">
+  <img src="https://img.shields.io/badge/WebP-Optimizado-8A2BE2" alt="WebP">
+  <img src="https://img.shields.io/badge/Licencia-MIT-green" alt="MIT">
+  <img src="https://img.shields.io/badge/CI_Passing-ubuntu_|_macOS_|_windows-4CAF50" alt="CI">
+</p>
 
 ---
 
 ## 🎬 Demo
 
 <img src="src/capture-video.gif" alt="AssetShrink Demo" width="800">
+
+---
+
+## 📥 Descarga
+
+Descarga el binario precompilado para tu sistema desde la carpeta [`releases/`](releases/):
+
+| Sistema | Archivo |
+|---------|---------|
+| 🐧 Linux x64 | [`AssetShrink-linux-x64.zip`](releases/AssetShrink-linux-x64.zip) |
+| 🍎 macOS Universal | [`AssetShrink-macos-universal.zip`](releases/AssetShrink-macos-universal.zip) |
+| 🪟 Windows x64 | [`AssetShrink-windows-x64.zip`](releases/AssetShrink-windows-x64.zip) |
+
+```bash
+# Descomprimir y ejecutar (Linux/macOS)
+unzip AssetShrink-*.zip
+./AssetShrink
+```
+
+```powershell
+# Descomprimir y ejecutar (Windows)
+Expand-Archive AssetShrink-windows-x64.zip .
+.\AssetShrink.exe
+```
+
+El servidor se levanta automáticamente en `http://localhost:8080` y abre tu navegador.
+
+> **💡 ¿Necesitas ayuda?** — `./AssetShrink --version` muestra la versión instalada.
 
 ---
 
@@ -38,16 +74,18 @@ AssetShrink es una herramienta de escritorio ligera que se ejecuta al 100% en tu
 
 ---
 
-## 🛠️ Requisitos de Compilación (Linux)
+## 🔧 Compilación desde Código Fuente
 
-Para compilar la aplicación desde el código fuente, asegúrate de tener instaladas las herramientas de desarrollo estándar y la librería WebP de Google:
+> *No necesitas compilar si descargaste el binario precompilado. Esta sección es para desarrolladores.*
+
+### Requisitos (Linux)
 
 ```bash
 sudo apt update
 sudo apt install cmake build-essential libwebp-dev pkg-config
 ```
 
-## 🚀 Compilación y Ejecución Rápida
+### Compilación y Ejecución
 
 ```bash
 cmake -B build
@@ -55,7 +93,7 @@ cmake --build build
 ./build/AssetShrink
 ```
 
-El ejecutable levantará de forma silenciosa el servidor local y abrirá automáticamente una pestaña de tu navegador predeterminado en `http://localhost:8080`.
+---
 
 ## 📂 Dependencias y Licencias de Terceros
 
@@ -68,4 +106,3 @@ Este proyecto es posible gracias a extraordinarias librerías de la comunidad, e
 ## 📄 Licencia
 
 MIT License — consulta el archivo [LICENSE](LICENSE) para más detalles.
-```
