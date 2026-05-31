@@ -4,12 +4,12 @@ project(AssetShrink VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_CXX_STANDARD 17)
 set(CMAKE_CXX_STANDARD_REQUIRED ON)
 
-# Descargar la librería stb automáticamente fijando el tag para reproducibilidad
+# Descargar la librería stb y cpp-httplib automáticamente
 include(FetchContent)
 FetchContent_Declare(
     stb
     GIT_REPOSITORY https://github.com/nothings/stb.git
-    GIT_TAG        31c1ad37456438565541f4919958214b6e762fb4
+    GIT_TAG        master
 )
 FetchContent_Declare(
     httplib
@@ -20,14 +20,26 @@ FetchContent_MakeAvailable(httplib stb)
 
 find_package(Threads REQUIRED)
 
-# --- Buscar la librería WebP de manera multiplataforma ---
+# --- Buscar la librería WebP de manera multiplataforma inteligente ---
 if(WIN32)
     # En Windows usamos la integración oficial de vcpkg (sin pkg-config)
     find_package(WebP CONFIG REQUIRED)
     set(WEBP_LIBRARIES WebP::webp WebP::webpdecoder)
     set(WEBP_INCLUDE_DIRS "")
+elseif(APPLE)
+    # En macOS evitamos pkg-config y buscamos de forma nativa en rutas de Homebrew (ARM64 y x86)
+    find_path(WEBP_INCLUDE_DIR NAMES webp/encode.h PATHS /opt/homebrew/include /usr/local/include)
+    find_library(WEBP_LIBRARY NAMES webp PATHS /opt/homebrew/lib /usr/local/lib)
+    find_library(WEBP_DECODER_LIBRARY NAMES webpdecoder PATHS /opt/homebrew/lib /usr/local/lib)
+
+    if(WEBP_INCLUDE_DIR AND WEBP_LIBRARY)
+        set(WEBP_LIBRARIES ${WEBP_LIBRARY} ${WEBP_DECODER_LIBRARY})
+        set(WEBP_INCLUDE_DIRS ${WEBP_INCLUDE_DIR})
+    else()
+        message(FATAL_ERROR "No se pudo encontrar libwebp de forma nativa en macOS")
+    endif()
 else()
-    # En Linux/macOS usamos PkgConfig de forma segura
+    # En Linux usamos PkgConfig de forma segura
     find_package(PkgConfig REQUIRED)
     pkg_check_modules(WEBP REQUIRED libwebp)
 endif()
@@ -57,6 +69,6 @@ else()
     add_executable(AssetShrink main.cpp)
 endif()
 
-# Enlazar librerías
+# Enlazar las librerías
 target_include_directories(AssetShrink PRIVATE ${stb_SOURCE_DIR} ${WEBP_INCLUDE_DIRS})
 target_link_libraries(AssetShrink PRIVATE httplib Threads::Threads ${WEBP_LIBRARIES})
