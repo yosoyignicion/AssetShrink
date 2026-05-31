@@ -11,6 +11,7 @@ jobs:
     name: Compilar en ${{ matrix.os }}
     runs-on: ${{ matrix.os }}
     strategy:
+      fail-fast: false # Evita que el fallo de un sistema cancele a los demás
       matrix:
         os: [ubuntu-latest, windows-latest, macos-latest]
 
@@ -27,7 +28,7 @@ jobs:
     - name: Instalar WebP en macOS
       if: matrix.os == 'macos-latest'
       run: |
-        brew install webp pkg-config
+        brew install webp
 
     - name: Instalar WebP en Windows (vcpkg)
       if: matrix.os == 'windows-latest'
