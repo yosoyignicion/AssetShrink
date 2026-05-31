@@ -35,3 +35,6 @@ app.icns
 
 # Engram local data
 sqlite.log
+
+# Temp / testing
+test.txt

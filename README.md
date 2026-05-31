@@ -1,17 +1,12 @@
-```
-                    ╔══════════════════════════════════╗
-                    ║          ASSETSHRINK             ║
-                    ║    ⚡ C++17 · WebP · Local ⚡    ║
-                    ╚══════════════════════════════════╝
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="src/logotipo.jpg">
+  <img src="src/logotipo.jpg" alt="AssetShrink Logo" width="800">
+</picture>
 
-     █████╗  ██████╗ ███████╗███████╗████████╗███████╗██╗  ██╗██████╗ ██╗███╗   ██╗██╗  ██╗
-    ██╔══██╗██╔════╝ ██╔════╝██╔════╝╚══██╔══╝██╔════╝██║  ██║██╔══██╗██║████╗  ██║██║ ██╔╝
-    ███████║██║  ███╗███████╗███████╗   ██║   ███████╗███████║██████╔╝██║██╔██╗ ██║█████╔╝
-    ██╔══██║██║   ██║╚════██║╚════██║   ██║   ╚════██║██╔══██║██╔══██╗██║██║╚██╗██║██╔═██╗
-    ██║  ██║╚██████╔╝███████║███████║   ██║   ███████║██║  ██║██║  ██║██║██║ ╚████║██║  ██╗
-    ╚═╝  ╚═╝ ╚═════╝ ╚══════╝╚══════╝   ╚═╝   ╚══════╝╚═╝  ╚═╝╚═╝  ╚═╝╚═╝╚═╝  ╚═══╝╚═╝  ╚═╝
-
-```
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset="src/versus.png">
+  <img src="src/versus.png" alt="AssetShrink Versus Banner" width="800">
+</picture>
 
 # AssetShrink v2.1
 
@@ -23,6 +18,12 @@ AssetShrink es una herramienta de escritorio ligera que se ejecuta al 100% en tu
 ![Badge](https://img.shields.io/badge/WebP-Optimizado-8A2BE2)
 ![Badge](https://img.shields.io/badge/Licencia-MIT-green)
 ![Badge](https://img.shields.io/badge/CI_Passing-ubuntu_|_macOS_|_windows-4CAF50)
+
+---
+
+## 🎬 Demo
+
+<img src="src/capture-video.gif" alt="AssetShrink Demo" width="800">
 
 ---
 
