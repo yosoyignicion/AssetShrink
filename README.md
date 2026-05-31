@@ -13,9 +13,11 @@
 
 ```
 
-# AssetShrink
+# AssetShrink v2.1
 
-**Compresor local de imágenes a WebP ultra-rápido y privado mediante C++17.**
+> **Compresor y conversor de imágenes local, ultra-rápido y privado mediante C++17 & WebP.**
+
+AssetShrink es una herramienta de escritorio ligera que se ejecuta al 100% en tu máquina local. Permite optimizar y convertir múltiples imágenes simultáneamente a formatos WebP, PNG o JPEG de manera segura y sin enviar tus archivos a servidores externos.
 
 ![Badge](https://img.shields.io/badge/C%2B%2B-17-00599C?logo=cplusplus)
 ![Badge](https://img.shields.io/badge/WebP-Optimizado-8A2BE2)
@@ -24,61 +26,49 @@
 
 ---
 
-## Características clave
+## ✨ Características Clave
 
-- **100% Local y Privado** — Los datos nunca salen de tu ordenador. Sin telemetría, sin subidas a la nube.
-- **Velocidad nativa de C++ y optimización de Google WebP** — Rendimiento máximo combinado con el mejor códec de compresión con pérdida.
-- **Comparador interactivo split-screen** — Desliza para ver original vs comprimido en tiempo real. Ajusta la calidad y el modo lossless al instante.
-- **Sin suscripciones, sin servidores externos** — Un binario, una máquina, sin dependencias de terceros en ejecución.
-- **Multiplataforma** — Compilado y probado en Linux, macOS y Windows via CI/CD.
+*   🔒 **Privacidad Total:** Procesamiento estrictamente local. Ideal para manejar assets confidenciales de proyectos o clientes.
+*   🚀 **Rendimiento Nativo:** Desarrollado sobre un motor multihilo en C++17 para un procesamiento de imágenes de latencia ultra-baja.
+*   🔄 **Conversión Bidireccional:** Soporta PNG ↔ JPEG ↔ WebP directamente en memoria (sin escrituras temporales en disco).
+*   📦 **Procesamiento por Lotes:** Cola de tareas asíncrona para arrastrar y procesar decenas de archivos simultáneamente.
+*   📊 **Comparador Visual:** Interfaz *Split-Screen* interactiva en tiempo real para juzgar la fidelidad de la compresión.
+*   🌍 **Internacionalización:** Interfaz configurable en Español e Inglés que guarda tus preferencias en el sistema.
 
-## Requisitos previos
+---
 
-- Compilador con soporte C++17 (GCC >= 7, Clang >= 5)
-- CMake >= 3.15
-- `libwebp-dev` (en sistemas Linux)
+## 🛠️ Requisitos de Compilación (Linux)
+
+Para compilar la aplicación desde el código fuente, asegúrate de tener instaladas las herramientas de desarrollo estándar y la librería WebP de Google:
 
 ```bash
-# Debian / Ubuntu
-sudo apt install build-essential cmake pkg-config libwebp-dev
-
-# Arch Linux
-sudo pacman -S base-devel cmake libwebp
-
-# Fedora
-sudo dnf install gcc-c++ cmake pkgconfig libwebp-devel
+sudo apt update
+sudo apt install cmake build-essential libwebp-dev pkg-config
 ```
 
-## Instrucciones de compilación
+## 🚀 Compilación y Ejecución Rápida
 
 ```bash
 cmake -B build
 cmake --build build
-```
-
-## Cómo usar
-
-Ejecuta el binario generado:
-
-```bash
 ./build/AssetShrink
 ```
 
-El servidor se inicia y el navegador se abre automáticamente en `http://localhost:8080`. Arrastra cualquier imagen PNG, JPG o JPEG y se comprimirá al instante a formato WebP. Usa el comparador visual para ver la diferencia, ajusta la calidad con el deslizador o activa el modo lossless para compresión sin pérdida.
+El ejecutable levantará de forma silenciosa el servidor local y abrirá automáticamente una pestaña de tu navegador predeterminado en `http://localhost:8080`.
 
-## Tecnologías integradas
+## 📂 Dependencias y Licencias de Terceros
 
-- **stb** — Librería *header-only* para decodificación de imágenes (dominio público).
-- **cpp-httplib** — Servidor HTTP ligero con licencia MIT.
-- **libwebp** — Códec de compresión WebP de Google (licencia BSD).
+Este proyecto es posible gracias a extraordinarias librerías de la comunidad, enlazadas de manera estática y respetando sus licencias correspondientes:
 
-## Licencia
+- **[stb](https://github.com/nothings/stb)** (Dominio Público / MIT) — Lectura y escritura de imágenes en memoria.
+- **[cpp-httplib](https://github.com/yhirose/cpp-httplib)** (Licencia MIT) — Servidor HTTP de alto rendimiento y bajo footprint.
+- **[libwebp](https://chromium.googlesource.com/webm/libwebp)** (Licencia BSD-3-Clause de Google) — El motor de codificación y decodificación WebP estándar de la industria.
+
+## 📄 Licencia
 
 ```
 MIT License
-
 Copyright (c) 2025
-
 Permission is hereby granted, free of charge, to any person obtaining a copy
 of this software and associated documentation files (the "Software"), to deal
 in the Software without restriction, including without limitation the rights
@@ -97,9 +87,3 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 ```
-
-### Atribuciones de terceros
-
-- **[stb](https://github.com/nothings/stb)** por Sean Barrett — Dominio público.
-- **[cpp-httplib](https://github.com/yhirose/cpp-httplib)** por Yuji Hirose — Licencia MIT.
-- **[libwebp](https://chromium.googlesource.com/webm/libwebp)** por Google — Licencia BSD.
