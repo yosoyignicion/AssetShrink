@@ -8,12 +8,6 @@
   <img src="src/versus.png" alt="AssetShrink Versus Banner" width="800">
 </picture>
 
-<div align="center">
-  <a href="https://ignaciodev.gumroad.com/l/assetshrink-pro">
-    <img src="https://img.shields.io/badge/Comprar_AssetShrink_PRO-Gumroad-800080?style=for-the-badge&logo=gumroad" alt="Comprar en Gumroad">
-  </a>
-</div>
-
 # AssetShrink PRO v2.1
 
 > **Compresor y conversor de imágenes local, ultra-rápido y privado mediante C++17 & WebP.**
@@ -37,13 +31,13 @@ AssetShrink es una herramienta de escritorio ligera que se ejecuta al 100% en tu
 
 ## 📥 Descarga
 
-Descarga el binario precompilado para tu sistema desde la carpeta [`releases/`](releases/):
+Descarga el binario precompilado para tu sistema desde la [página de releases](https://github.com/yosoyignicion/AssetShrink/releases/latest).
 
 | Sistema | Archivo |
 |---------|---------|
-| 🐧 Linux x64 | [`AssetShrink-linux-x64.zip`](releases/AssetShrink-linux-x64.zip) |
-| 🍎 macOS Universal | [`AssetShrink-macos-universal.zip`](releases/AssetShrink-macos-universal.zip) |
-| 🪟 Windows x64 | [`AssetShrink-windows-x64.zip`](releases/AssetShrink-windows-x64.zip) |
+| 🐧 Linux x64 | `AssetShrink-linux-x64.zip` |
+| 🍎 macOS Universal | `AssetShrink-macos-universal.zip` |
+| 🪟 Windows x64 | `AssetShrink-windows-x64.zip` |
 
 ```bash
 # Descomprimir y ejecutar (Linux/macOS)

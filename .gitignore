@@ -29,12 +29,14 @@ Makefile
 *.out
 *.app
 
-# Resources (optional icons — not tracked)
-app.ico
-app.icns
+# Pre-built binaries (use GitHub Releases instead)
+releases/
 
 # Engram local data
 sqlite.log
 
 # Temp / testing
 test.txt
+
+# Archive
+archive/

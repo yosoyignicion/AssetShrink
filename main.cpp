@@ -61,7 +61,6 @@ const char* INDEX_HTML = R"raw(
     <meta property="og:title" content="AssetShrink PRO v2.1">
     <meta property="og:description" content="Compresor y conversor de imágenes local, ultra-rápido y privado mediante C++17 & WebP.">
     <meta property="og:type" content="website">
-    <meta property="og:url" content="https://ignaciodev.gumroad.com/l/assetshrink-pro">
     <!-- Estilos CSS Premium embebidos (100% Offline, no requiere internet) -->
     <style>
         :root { --indigo: #6366f1; --indigo-hover: #4f46e5; --slate-950: #020617; --slate-900: #0f172a; --slate-800: #1e293b; --slate-500: #64748b; --slate-300: #cbd5e1; --slate-100: #f1f5f9; }
@@ -484,7 +483,7 @@ const char* INDEX_HTML = R"raw(
 int main(int argc, char* argv[]) {
     if (argc == 2 && (std::string(argv[1]) == "--version" || std::string(argv[1]) == "-v")) {
         std::cout << PROJECT_NAME << " " << PROJECT_VERSION << std::endl;
-        std::cout << "Copyright (c) 2025 ignaciodev.gumroad.com" << std::endl;
+        std::cout << "Copyright (c) 2025 ignaciodev" << std::endl;
         return 0;
     }
 
