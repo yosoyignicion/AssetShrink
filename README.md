@@ -1,6 +1,6 @@
 <picture>
   <source media="(prefers-color-scheme: dark)" srcset="src/logotipo.jpg">
-  <img src="src/logotipo.jpg" alt="AssetShrink Logo" width="800">
+  <img src="src/logotipo.jpg" alt="AssetShrink Logo" width="88" height="88">
 </picture>
 
 <picture>
