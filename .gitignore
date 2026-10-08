@@ -21,6 +21,8 @@ cmake_install.cmake
 Makefile
 *.cmake
 !CMakeLists.txt
+!cmake/
+!cmake/*.cmake
 
 # Compiled
 *.o
@@ -34,6 +36,7 @@ releases/
 
 # Engram local data
 sqlite.log
+.engram/
 
 # Temp / testing
 test.txt
