@@ -13,6 +13,11 @@ case "$(uname -s)" in
   MINGW*|MSYS*|CYGWIN*) [ "$BIN" = "build/AssetShrink" ] && BIN="build/Release/AssetShrink.exe" ;;
 esac
 
+# macOS empaqueta el ejecutable dentro del bundle .app.
+if [ ! -x "$BIN" ] && [ -x "$BIN.app/Contents/MacOS/$(basename "$BIN")" ]; then
+  BIN="$BIN.app/Contents/MacOS/$(basename "$BIN")"
+fi
+
 if [ ! -x "$BIN" ]; then
   echo "FAIL: no se encontró el binario en '$BIN'. Compila primero con 'cmake --build build'."
   exit 1
