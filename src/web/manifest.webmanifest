@@ -1,0 +1,23 @@
+{
+  "name": "AssetShrink — Suite de herramientas",
+  "short_name": "AssetShrink",
+  "description": "Suite de herramientas local para imagen, texto, código y diseño. Todo el procesamiento ocurre en tu equipo.",
+  "start_url": "/",
+  "scope": "/",
+  "display": "standalone",
+  "display_override": ["window-controls-overlay", "standalone"],
+  "background_color": "#020617",
+  "theme_color": "#6366f1",
+  "icons": [
+    { "src": "/icon-192.png", "sizes": "192x192", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "any" },
+    { "src": "/icon-512.png", "sizes": "512x512", "type": "image/png", "purpose": "maskable" },
+    { "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any" }
+  ],
+  "shortcuts": [
+    { "name": "Optimizar imágenes", "short_name": "Optimizar", "url": "/tools/optimize" },
+    { "name": "Generar QR", "short_name": "QR", "url": "/tools/qr" },
+    { "name": "Generador de favicon", "short_name": "Favicon", "url": "/tools/favicon" },
+    { "name": "Imagen a Base64", "short_name": "Base64", "url": "/tools/imgbase64" }
+  ]
+}

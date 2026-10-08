@@ -1,0 +1,40 @@
+# Metadatos por ruta para el <head> inyectado por el servidor.
+# Formato: ruta|título|descripción   (no usar '|' en los textos)
+# Mantener sincronizado con js/tools.js (títulos/descripciones de cada herramienta).
+/|Suite de herramientas local|Suite de herramientas para imagen, texto, código y diseño. Todo el procesamiento ocurre en local con un motor nativo C++: sin subidas, sin registro, sin marcas de agua.
+/pricing|Gratis|Gratis y para siempre. Sin cuentas, sin subidas y sin marcas de agua.
+/tools/optimize|Optimizador de imágenes|Comprime y convierte imágenes a WebP, PNG o JPEG sin subirlas a ningún servidor.
+/tools/resize|Redimensionar imágenes|Cambia el tamaño de tus imágenes por píxeles o porcentaje con alta calidad.
+/tools/crop|Recortar y girar|Recorta, gira y voltea imágenes directamente en el navegador.
+/tools/watermark|Marca de agua|Añade una marca de agua de texto a tus imágenes.
+/tools/beautify|Embellecer capturas|Añade fondos, sombras y esquinas redondeadas a tus capturas de pantalla.
+/tools/palette|Extractor de colores|Obtén la paleta de colores dominante de cualquier imagen.
+/tools/gradient|Generador de degradados|Crea degradados CSS con múltiples paradas y expórtalos.
+/tools/color|Color y contraste|Convierte entre HEX, RGB y HSL y comprueba el contraste WCAG AA/AAA.
+/tools/shadow|Generador de sombras|Diseña sombras CSS box-shadow de forma visual.
+/tools/wordcount|Contador de palabras|Cuenta palabras, caracteres, frases y tiempo de lectura.
+/tools/caseconv|Convertidor de texto|Convierte entre camelCase, snake_case, kebab-case, Título y slug.
+/tools/textlines|Líneas de texto|Ordena, elimina duplicados, limpia y numera líneas de texto.
+/tools/findreplace|Buscar y reemplazar|Reemplaza texto literal o patrones regex en lote.
+/tools/lorem|Lorem ipsum|Genera texto de relleno Lorem ipsum y tablas Markdown.
+/tools/json|Herramientas JSON|Formatea, valida, minifica y ordena JSON.
+/tools/textdiff|Comparador de textos|Encuentra las diferencias entre dos textos línea a línea.
+/tools/markdown|Editor Markdown|Escribe Markdown con vista previa en vivo y exporta .md o .html.
+/tools/regex|Probador de Regex|Prueba expresiones regulares en vivo con coincidencias resaltadas.
+/tools/hash|Hash y codificador|Calcula SHA-1/256/384/512 y codifica en Base64 o URL.
+/tools/password|Generador de contraseñas|Genera contraseñas seguras y aleatorias con estimación de fortaleza.
+/tools/uuid|Generador de UUID|Genera identificadores UUID v4 y NanoID en lote.
+/tools/timestamp|Timestamp a fecha|Convierte epoch Unix a fecha legible y viceversa.
+/tools/jwt|Decodificador JWT|Inspecciona el header y el payload de un token JWT.
+/tools/urlparse|Analizador de URL|Separa y reconstruye URL y sus parámetros de consulta.
+/tools/qr|Generador de QR|Genera códigos QR en PNG o SVG con control de tamaño y corrección de errores.
+/tools/aiprompts|Prompts de IA|Librería de plantillas de prompts listas para usar.
+/tools/secrets|Limpiador de datos sensibles|Enmascara emails, claves y tokens antes de compartir un texto.
+/tools/splitter|Fragmentador semántico|Divide texto en fragmentos por tamaño con solapamiento.
+/tools/tokens|Contador de tokens|Estima el número de tokens de un texto para modelos LLM.
+/tools/favicon|Generador de favicon|Genera favicons multi-tamaño, .ico y el snippet de manifest desde una imagen.
+/tools/imagecompare|Comparador de imágenes|Compara dos imágenes A/B con un deslizador.
+/tools/svgoptimize|Optimizador SVG|Minifica archivos SVG y reduce su peso.
+/tools/imageformat|Convertidor de formato|Convierte AVIF, BMP o GIF a WebP, PNG o JPEG directamente en el navegador.
+/tools/eyedropper|Cuentagotas|Captura el color exacto de cualquier píxel de una imagen.
+/tools/imgbase64|Imagen a Base64|Convierte imágenes a Data URI o Base64 y elimina metadatos.

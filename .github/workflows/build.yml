@@ -18,6 +18,12 @@ jobs:
     steps:
     - uses: actions/checkout@v4
 
+    # 0. Verificar paridad de traducciones ES/EN (solo una vez)
+    - name: Verificar i18n (ES/EN)
+      if: matrix.os == 'ubuntu-latest'
+      shell: bash
+      run: bash scripts/check_i18n.sh
+
     # 1. Instalar dependencias según el sistema operativo
     - name: Instalar WebP en Linux
       if: matrix.os == 'ubuntu-latest'
@@ -48,7 +54,17 @@ jobs:
     - name: Compilar
       run: cmake --build build --config Release
 
-    # 4. Guardar los ejecutables como artefactos descargables (Corregido para macOS .app)
+    # 4. Smoke test de endpoints (todos los SO vía bash)
+    - name: Smoke test
+      shell: bash
+      run: |
+        BIN="build/AssetShrink"
+        if [ "${{ matrix.os }}" = "windows-latest" ]; then
+          BIN="build/Release/AssetShrink.exe"
+        fi
+        bash scripts/smoke.sh "$BIN" 8090
+
+    # 5. Guardar los ejecutables como artefactos descargables (Corregido para macOS .app)
     - name: Subir ejecutable compilado
       uses: actions/upload-artifact@v4
       with:
