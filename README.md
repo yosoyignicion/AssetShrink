@@ -37,7 +37,13 @@ AssetShrink es una suite de escritorio ligera que se ejecuta al 100% en tu máqu
 
 ## 📥 Descarga
 
-Los binarios se compilan automáticamente en CI para **Linux, macOS y Windows** en cada push a `main`. Descárgalos desde la pestaña **Actions → último workflow → Artifacts**, o compílalos desde el código fuente (ver más abajo).
+Descarga el binario precompilado desde la [última release](https://github.com/yosoyignicion/AssetShrink/releases/latest), o compílalo desde el código fuente (ver más abajo).
+
+| Sistema | Archivo |
+|---------|---------|
+| 🐧 Linux x64 | [`AssetShrink-linux-x64.zip`](https://github.com/yosoyignicion/AssetShrink/releases/latest) |
+| 🪟 Windows x64 | [`AssetShrink-windows-x64.zip`](https://github.com/yosoyignicion/AssetShrink/releases/latest) |
+| 🍎 macOS (universal) | [`AssetShrink-macos-universal.zip`](https://github.com/yosoyignicion/AssetShrink/releases/latest) |
 
 ```bash
 ./AssetShrink          # Linux/macOS
