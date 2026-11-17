@@ -29,20 +29,24 @@ AssetShrink es una caja de herramientas de escritorio que arranca un servidor lo
 
 <table>
   <tr>
-    <td width="50%" align="center"><img src="docs/img/landing-dark.webp" alt="Interfaz en tema oscuro"></td>
-    <td width="50%" align="center"><img src="docs/img/landing-light.webp" alt="Interfaz en tema claro"></td>
+    <td width="33%" align="center"><img src="docs/img/landing-dark.webp" alt="Interfaz en tema oscuro"></td>
+    <td width="33%" align="center"><img src="docs/img/landing-light.webp" alt="Interfaz en tema claro"></td>
+    <td width="33%" align="center"><img src="docs/img/optimizer-dark.webp" alt="Optimizador con comparador antes/después"></td>
   </tr>
   <tr>
     <td align="center"><sub>Tema oscuro (sigue al sistema)</sub></td>
     <td align="center"><sub>Tema claro</sub></td>
+    <td align="center"><sub>Comparador antes/después — PNG de 1&nbsp;MB → WebP de 57&nbsp;KB (<b>-94&nbsp;%</b>)</sub></td>
   </tr>
   <tr>
-    <td width="50%" align="center"><img src="docs/img/optimizer-dark.webp" alt="Optimizador con comparador antes/después"></td>
-    <td width="50%" align="center"><img src="docs/img/command-palette-dark.webp" alt="Command palette (Ctrl/Cmd+K)"></td>
+    <td width="33%" align="center"><img src="docs/img/command-palette-dark.webp" alt="Command palette (Ctrl/Cmd+K)"></td>
+    <td width="33%" align="center"><img src="docs/img/palette-dark.webp" alt="Extractor de colores con paleta dominante"></td>
+    <td width="33%" align="center"><img src="docs/img/gradient-dark.webp" alt="Generador de degradados"></td>
   </tr>
   <tr>
-    <td align="center"><sub>Comparador antes/después tras comprimir</sub></td>
     <td align="center"><sub>Command palette <kbd>Ctrl/Cmd</kbd>+<kbd>K</kbd></sub></td>
+    <td align="center"><sub>Extractor de colores (motor C++)</sub></td>
+    <td align="center"><sub>Generador de degradados con export CSS</sub></td>
   </tr>
 </table>
 
