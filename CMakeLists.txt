@@ -11,7 +11,9 @@ include(FetchContent)
 FetchContent_Declare(
     stb
     GIT_REPOSITORY https://github.com/nothings/stb.git
-    GIT_TAG        master
+    # stb_image_resize2.h se movió a nothings/stb_image_resize en master (2026-11-12);
+    # fijamos el último commit que lo incluye en la raíz.
+    GIT_TAG        2c980bb59875b0d32144a71867fbdebb2f77cd20
 )
 FetchContent_Declare(
     httplib
